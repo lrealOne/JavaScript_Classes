@@ -94,3 +94,63 @@ const personName = (name, secondName) => {
 const me = personName("Luan", "Carvalho")
 me.fullName = "Ana Julia Alves"
 /////////////////////////////////////////
+
+// funções construtoras 
+
+// similar a factory function, porem necessita de algumas alterações
+
+const Pessoa = (nome, sobrenome) => {
+    // Private
+    const id = 123;
+    const metodoInterno = () => {
+
+    };
+
+    // Atributos ou metodos publicos
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+
+
+    this.metodo = () => {
+        console.log(this.nome + ": sou um metodo");
+    };
+};
+
+const p1 = new Pessoa("Luan", "Carvalho");
+const p2 = new Pessoa("Ana Julia", "Alves de Novais");
+
+//////////////////////////////////////////////////////
+
+// função recursiva
+
+// função que se chama de volta ate atingir certo parametro estabelecido
+
+const recursiva = (max) => {
+    console.log(max);
+    if (max <= 1) return;
+    max--;
+    recursiva(max);
+}
+
+recursiva(12)
+
+//////////////////////////////////////////////////
+
+
+// função geradora
+
+function* contador(){
+    //Codigo qualquer...
+    yield "Valor 1";
+
+    //Codigo qualquer...
+    yield "Valor 2";
+
+    //Codigo qualquer...
+    yield "Valor 3"
+};
+
+contador().next(); // valor 1
+contador().next(); // valor 2
+contador().next(); // valor 3
+
