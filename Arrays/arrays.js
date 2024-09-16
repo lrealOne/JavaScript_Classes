@@ -149,7 +149,7 @@ const oldBoyz2 = persons.filter(obj => obj.idade >= 50)
 const lastA = persons.filter(obj => obj.nome.endsWith("a"));
 //console.log(lastA)
 
-
+//----------------------------------------------------------
 // map => Sempre retorna um array com a mesma quantidade de elementos do array original, porem com os elementos alterados. 
 
 // dobre os numeros 
@@ -158,4 +158,38 @@ const numberArray =
     5, 8, 7, 11, 15, 22, 27];
 
 let doubleNumbers = numberArray.map((number) => number * 2)
-console.log(doubleNumbers)
+//console.log(doubleNumbers)
+
+// Para cada elemento 
+
+const personArray = [
+    { nome: "Luan", idade: 62},
+    { nome: "Ana julia", idade: 23},
+    { nome: "Caio", idade: 55},
+    { nome: "Arthur", idade: 19},
+    { nome: "Lorena", idade: 32},
+    { nome: "Luiza", idade: 47}
+]
+
+// a) Retorne apenas uma string com o nome da pessoa;
+const nomes = personArray.map(obj => obj.nome).join(", ")
+//console.log(nomes)
+
+// b) Remova apenas a chave "nome do objeto"
+const anonymous = personArray.map(obj =>{
+//    delete(obj.nome); //para excluir os nomes
+    return obj.idade
+});
+//console.log(anonymous)
+
+// c) adicione id em cada objeto 
+
+const personsId = personArray.map((obj, i) => {
+    obj.id = i + 1; // +1 pra nao ter id = 0
+    return obj;
+})
+// console.log(personsId)
+
+//----------------------------------------------------------
+
+// Reduce - Serve para reduzir arrays
