@@ -193,3 +193,52 @@ const personsId = personArray.map((obj, i) => {
 //----------------------------------------------------------
 
 // Reduce - Serve para reduzir arrays
+
+const numberToReduce = [5, 50, 80, 1, 2, 3,
+    5, 8, 7, 11, 15, 22, 27];
+
+const sum = numberToReduce.reduce((acumulador, valor) => {
+    acumulador += valor;
+    return acumulador;
+})
+
+// Retorne a pessoa mais velha
+
+const arrayToReduce = [
+    { nome: "Luan", idade: 24},
+    { nome: "Ana julia", idade: 23},
+    { nome: "Caio", idade: 55},
+    { nome: "Arthur", idade: 19},
+    { nome: "Lorena", idade: 32},
+    { nome: "Luiza", idade: 47}
+];
+
+const older = arrayToReduce.reduce((acumulator, value) => {
+    if(acumulator.idade > value.idade) return acumulator; return value;
+}) 
+//console.log(older)
+
+
+// Filter ++ Map ++ Reduce
+
+// Retorne a soma do dobro dos numeros pares
+const numberList = [5, 50, 80, 1, 2, 3,
+    5, 8, 7, 11, 15, 22, 27];
+
+const evenNum = numberList
+    .filter(value => value % 2 === 0)
+    .map(value => value * 2)
+    .reduce((ac, value) => ac + value);
+//console.log(evenNum)
+
+
+///////////////////////////////////////////
+
+// ForEach => itera sobre os valores, não retorna e nem altera nada
+
+const tenNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+tenNum.forEach(value => {
+    const d = value * 2;
+
+    console.log(d);
+});

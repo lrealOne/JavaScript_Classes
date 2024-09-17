@@ -128,7 +128,7 @@ const Calculadora = () => {
         //adiciona valor pressionado ao Display
         btnToDisplay(value){
             this.display.value += value;
-            this.display.focus();
+            this.display.focus()
 
         },
 
